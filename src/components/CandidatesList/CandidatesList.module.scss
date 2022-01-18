@@ -1,0 +1,10 @@
+.candidatesList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.listItem {
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}

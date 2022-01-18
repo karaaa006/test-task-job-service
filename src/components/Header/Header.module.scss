@@ -1,0 +1,99 @@
+.header {
+  background-image: url("../../images/header-bg.jfif");
+  color: #ffffff;
+}
+
+.topBar {
+  margin-bottom: 35px;
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.langs {
+  display: flex;
+  color: #eaeaea;
+  align-items: flex-end;
+}
+
+.langName {
+  font-weight: 300;
+  line-height: 1.5;
+  font-size: 12px;
+}
+
+.userName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+}
+
+.active {
+  font-weight: 600;
+}
+
+.navList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-type: none;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-size: 13px;
+  font-weight: 400;
+  color: inherit;
+  text-decoration: none;
+}
+
+.inputWrap {
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}
+
+.input {
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.37;
+  font-weight: 400;
+  padding: 13px 45px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: inherit;
+  border: none;
+  font-family: inherit;
+
+  &::placeholder {
+    color: inherit;
+  }
+}
+
+.icon {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: block;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px 20px;
+  font-weight: 600;
+  border: none;
+  background-color: #fff9e4;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1.35;
+  font-family: inherit;
+}

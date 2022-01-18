@@ -1,0 +1,41 @@
+.footer {
+  background-image: url("../../images/header-bg.jfif");
+  color: #ffffff;
+}
+.title {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+}
+
+.linksList,
+.socialsList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+.linksItem {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.socialsList {
+  display: flex;
+  justify-content: center;
+}
+
+.socialsItem {
+  &:not(:last-child) {
+    margin-right: 16px;
+  }
+}
+
+.link {
+  font-size: 14px;
+  color: inherit;
+  text-decoration: none;
+}
