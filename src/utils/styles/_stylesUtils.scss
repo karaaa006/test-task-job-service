@@ -15,3 +15,17 @@
   border: none;
   background-color: transparent;
 }
+
+%list-reset {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+// Mixins
+
+@mixin for-tablets {
+  @media (min-width: 768px) {
+    @content;
+  }
+}

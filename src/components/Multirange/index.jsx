@@ -29,7 +29,6 @@ export const Multirange = ({ min, max, rangeText }) => {
         onChange={handleChange}
         valueLabelDisplay="auto"
         sx={{
-          width: 300,
           color: "success.main",
           "& .MuiSlider-thumb:not(:last-child)": {
             width: "15px",
@@ -42,7 +41,11 @@ export const Multirange = ({ min, max, rangeText }) => {
             backgroundColor: "#fff9e4",
             border: "4px solid #000046",
           },
-          "& .MuiSlider-track": { height: "1px", color: "#000046" },
+          "& .MuiSlider-track": {
+            height: "1px",
+            color: "#000046",
+            width: "100%",
+          },
           "& .MuiSlider-rail": { height: "1px", color: "#eaeaea" },
           "& .MuiSlider-thumb::after": { height: "1px", color: "#eaeaea" },
         }}

@@ -6,10 +6,16 @@ export const CheckboxGroup = ({ options }) => {
   console.log(options);
   return (
     <ul className={s.checkboxGroup}>
-      {options.map(({ text, count, lavel }, idx) => {
+      {options.map(({ text, count, lavel, flag, name }, idx) => {
         return (
           <li className={s.checkboxGroupItem} key={idx}>
-            <Checkbox text={text} count={count} subOptions={lavel} />
+            <Checkbox
+              text={text}
+              count={count}
+              subOptions={lavel}
+              img={flag}
+              name={name}
+            />
           </li>
         );
       })}

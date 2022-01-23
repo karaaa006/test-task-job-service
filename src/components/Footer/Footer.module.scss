@@ -1,18 +1,19 @@
+@import "../../utils/styles/stylesUtils";
+
 .footer {
   background-image: url("../../images/header-bg.jfif");
   background-position: center;
   color: #ffffff;
   padding: 130px 0 40px;
 }
-.title {
-  margin-bottom: 15px;
-  font-weight: 600;
-  font-size: 14px;
-  text-align: center;
-}
 
 .infoLinks {
   margin-bottom: 130px;
+
+  @include for-tablets {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .linksBlock {
@@ -21,14 +22,32 @@
   &:not(:last-child) {
     margin-bottom: 60px;
   }
+
+  @include for-tablets {
+    margin-bottom: 0;
+
+    &:not(:last-child) {
+      margin-right: 230px;
+    }
+  }
+}
+
+.title {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
 }
 
 .linksList,
 .socialsList {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
+  @extend %list-reset;
+
   text-align: center;
+
+  @include for-tablets {
+    text-align: left;
+  }
 }
 
 .linksItem {
@@ -59,11 +78,11 @@
 }
 
 .copyrightList {
+  @extend %list-reset;
+
   display: flex;
   justify-content: center;
   margin: 10px 0 12px;
-  padding: 0;
-  list-style-type: none;
 }
 
 .copyrightItem {

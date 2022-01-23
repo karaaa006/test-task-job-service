@@ -1,10 +1,18 @@
+@import "../../utils/styles/stylesUtils";
+
 .candidatesList {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  @extend %list-reset;
+
+  width: 100%;
 }
 .listItem {
   &:not(:last-child) {
     margin-bottom: 30px;
+  }
+
+  @include for-tablets {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
   }
 }

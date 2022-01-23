@@ -6,7 +6,7 @@ import instagramIcon from "../../images/icons/instagram.svg";
 import youtubeIcon from "../../images/icons/youtube.svg";
 import whatsappIcon from "../../images/icons/whatsapp.svg";
 
-export const Footer = (params) => {
+export const Footer = () => {
   return (
     <footer className={s.footer}>
       <div className="container">

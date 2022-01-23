@@ -29,6 +29,56 @@
   margin-right: auto;
 }
 
+.count {
+  &:not(:last-child) {
+    margin-right: 22px;
+  }
+}
+
 .img {
   margin-right: 8px;
+}
+
+.subOptions {
+  display: flex;
+  flex-direction: column;
+  margin-top: 21px;
+  display: none;
+
+  &.isOpen {
+    display: block;
+  }
+
+  color: #555556;
+}
+
+.optionWrap {
+  display: flex;
+  align-items: center;
+  padding: 0 25px 0;
+
+  &:not(:last-child) {
+    margin-bottom: 22px;
+  }
+}
+
+.nativeOption {
+  min-width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  border-color: #000046;
+}
+
+.subOptionsArrow {
+  transition: transform ease 250ms;
+
+  &.isOpen {
+    transform: rotate(180deg);
+  }
+}
+
+.subOptionText {
+  margin-right: auto;
+
+  font-size: 14px;
 }

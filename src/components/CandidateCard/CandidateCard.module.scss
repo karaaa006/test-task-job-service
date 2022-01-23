@@ -49,10 +49,11 @@ p {
 }
 
 .exp {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
+  @extend %list-reset;
+
   margin-bottom: 20px;
+
+  color: #5b5b5b;
 }
 
 .expItem {
@@ -118,9 +119,7 @@ p {
 }
 
 .moreList {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  @extend %list-reset;
 }
 
 .moreItem {
