@@ -60,11 +60,26 @@
   text-decoration: none;
 }
 
+.searchBar {
+  @include for-tablets {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .inputWrap {
   position: relative;
 
   &:not(:last-child) {
     margin-bottom: 12px;
+  }
+
+  @include for-tablets {
+    margin-right: 8px;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -82,6 +97,23 @@
 
   &::placeholder {
     color: inherit;
+  }
+
+  &.inputLarge {
+    display: none;
+    width: 410px;
+  }
+
+  @include for-tablets {
+    font-size: 14px;
+
+    &.inputSmall {
+      display: none;
+    }
+
+    &.inputLarge {
+      display: block;
+    }
   }
 }
 
@@ -102,4 +134,16 @@
   border-radius: 8px;
   font-size: 16px;
   line-height: 1.35;
+
+  transition: background-color ease 250ms;
+
+  &:hover,
+  &:focus {
+    background-color: #fff999;
+  }
+
+  @include for-tablets {
+    width: auto;
+    font-size: 14px;
+  }
 }

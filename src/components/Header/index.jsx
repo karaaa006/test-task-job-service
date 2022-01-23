@@ -6,7 +6,7 @@ import langIcon from "../../images/icons/language.svg";
 import downArrow from "../../images/icons/down-arrow.svg";
 import user from "../../images/icons/user.svg";
 
-export const Header = (params) => {
+export const Header = () => {
   return (
     <header className={s.header}>
       <div className="container">
@@ -29,11 +29,20 @@ export const Header = (params) => {
             <span>Юра Марченко</span>
           </div>
         </div>
-        <div className="searchBar">
+        <div className={s.searchBar}>
           <div className={s.inputWrap}>
             <img src={searchIcon} className={s.icon} alt="Лупа" />
 
-            <input type="text" placeholder="Поиск" className={s.input} />
+            <input
+              type="text"
+              placeholder="Поиск"
+              className={`${s.input} ${s.inputSmall}`}
+            />
+            <input
+              type="text"
+              placeholder="На какую должность вы ищете кандидата?"
+              className={`${s.input} ${s.inputLarge}`}
+            />
           </div>
           <div className={s.inputWrap}>
             <img src={markerIcon} className={s.icon} alt="Маркер" />

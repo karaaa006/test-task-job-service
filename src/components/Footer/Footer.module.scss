@@ -5,6 +5,10 @@
   background-position: center;
   color: #ffffff;
   padding: 130px 0 40px;
+
+  @include for-tablets {
+    padding-top: 68px;
+  }
 }
 
 .infoLinks {
@@ -13,6 +17,8 @@
   @include for-tablets {
     display: flex;
     justify-content: center;
+
+    margin-bottom: 68px;
   }
 }
 
@@ -28,6 +34,7 @@
 
     &:not(:last-child) {
       margin-right: 230px;
+      margin-bottom: 0;
     }
   }
 }
@@ -37,6 +44,10 @@
   font-weight: 600;
   font-size: 14px;
   text-align: center;
+
+  @include for-tablets {
+    margin-bottom: 20px;
+  }
 }
 
 .linksList,
@@ -53,6 +64,12 @@
 .linksItem {
   &:not(:last-child) {
     margin-bottom: 10px;
+  }
+
+  @include for-tablets {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
   }
 }
 
