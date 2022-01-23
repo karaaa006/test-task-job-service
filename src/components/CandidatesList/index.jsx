@@ -16,9 +16,8 @@ export const CandidatesList = ({ candidates }) => {
         const years = getDistanceDateToNow(birthday);
 
         return (
-          <li className={s.listItem}>
+          <li className={s.listItem} key={id}>
             <CandidateCard
-              key={id}
               name={first_name}
               photo={photo}
               position="Продавец - консультант"

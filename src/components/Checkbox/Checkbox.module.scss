@@ -1,0 +1,34 @@
+@import "../../utils/styles/stylesUtils";
+
+.checkboxWrap {
+  display: flex;
+  align-items: center;
+  color: #555556;
+}
+.nativeCheckbox {
+  @extend %visually-hidden;
+
+  &:checked ~ .customCheckbox {
+    background-color: #fbc53c;
+    background-image: url("../../images/icons/checkIcon.svg");
+  }
+}
+
+.customCheckbox {
+  width: 19px;
+  height: 19px;
+  margin-right: 8px;
+  border-radius: 2px;
+  border: 1px solid #ffe177;
+
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.text {
+  margin-right: auto;
+}
+
+.img {
+  margin-right: 8px;
+}

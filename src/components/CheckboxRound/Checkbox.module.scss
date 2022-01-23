@@ -1,0 +1,48 @@
+@import "../../utils/styles/stylesUtils";
+
+.checkboxWrap {
+  display: flex;
+  align-items: center;
+  color: #5b5b5b;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+.text {
+  margin-right: auto;
+}
+
+.nativeCheckbox {
+  @extend %visually-hidden;
+
+  &:checked ~ .customCheckbox {
+    background-color: #e5e5ff;
+    border: 1px solid #e5e5ff;
+    .indicator {
+      transform: translateX(100%);
+      background-color: #000046;
+    }
+  }
+}
+
+.customCheckbox {
+  display: flex;
+  width: 28px;
+  height: 16px;
+  background-color: #eaeaea;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  align-items: center;
+
+  transition: background-color ease 250ms;
+}
+
+.indicator {
+  width: 14px;
+  height: 14px;
+  background-color: #5b5b5b;
+  border-radius: 50%;
+  transition: transform ease 250ms, background-color ease 250ms;
+}

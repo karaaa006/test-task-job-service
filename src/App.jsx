@@ -8,6 +8,8 @@ import ruLocale from "date-fns/locale/ru";
 import { getDistanceDate, getDistanceDateToNow } from "./utils/dateUtils";
 import { Footer } from "./components/Footer";
 import { CandidatesList } from "./components/CandidatesList";
+import { QueryInfo } from "./components/QueryInfo";
+import { Filters } from "./components/Filters";
 
 function App() {
   const [candidates, setCandidates] = useState([]);
@@ -26,7 +28,9 @@ function App() {
     <div className="App">
       <Header />
       <div className="container">
+        <QueryInfo candidatesCount="451 642" position="продавец консультант" />
         <CandidatesList candidates={candidates} />
+        <Filters />
       </div>
       <Footer />
     </div>

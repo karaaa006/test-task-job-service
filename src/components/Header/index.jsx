@@ -12,11 +12,11 @@ export const Header = (params) => {
       <div className="container">
         <div className={s.topBar}>
           <div className={s.wrap}>
-            <div className={s.langs}>
+            <button className={s.langs}>
               <img src={langIcon} alt="Планета" />
               <span className={s.langName}>RU</span>
               <img src={downArrow} alt="Планета" />
-            </div>
+            </button>
             <nav className={s.nav}>
               <a href="#" className={`${s.navLink} ${s.active}`}>
                 Соискателю

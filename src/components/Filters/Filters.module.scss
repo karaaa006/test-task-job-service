@@ -1,0 +1,37 @@
+.isHidden {
+  transform: translateX(100%);
+}
+
+.filters {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 100vh;
+  padding: 20px;
+
+  background-color: #fdfdff;
+  overflow: scroll;
+
+  transition: transform ease 500ms;
+}
+
+.close {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  margin: 0 0 30px auto;
+  justify-content: center;
+  align-items: center;
+  border: none;
+
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 0px 7px rgba(13, 74, 145, 0.15);
+}
+
+.title {
+  margin: 0 0 15px 0;
+  font-size: 24px;
+  font-weight: 500;
+}

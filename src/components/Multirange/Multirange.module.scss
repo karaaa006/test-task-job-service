@@ -1,0 +1,21 @@
+.values {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input {
+  border: 1px solid #eaeaea;
+  padding: 10px;
+  width: 100px;
+  text-align: center;
+  font-size: 16px;
+  color: #202020;
+  font-weight: 300;
+  font-family: inherit;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+}

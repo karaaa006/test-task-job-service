@@ -1,0 +1,20 @@
+.filterBlock {
+  padding: 14px;
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+
+.title {
+  margin: 0 0 24px 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eaeaea;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.filterBlock > *:not(:last-child) {
+  margin-bottom: 20px;
+}

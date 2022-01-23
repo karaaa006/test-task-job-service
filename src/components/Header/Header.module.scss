@@ -1,6 +1,11 @@
+@import "../../utils/styles/stylesUtils";
+
 .header {
   background-image: url("../../images/header-bg.jfif");
+  background-position: center;
   color: #ffffff;
+  padding: 5px 0 20px;
+  margin-bottom: 40px;
 }
 
 .topBar {
@@ -18,6 +23,10 @@
   display: flex;
   color: #eaeaea;
   align-items: flex-end;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font-family: inherit;
 }
 
 .langName {
@@ -87,13 +96,13 @@
 }
 
 .btn {
+  @extend %btn-reset;
+
   width: 100%;
   padding: 14px 20px;
   font-weight: 600;
-  border: none;
   background-color: #fff9e4;
   border-radius: 8px;
   font-size: 16px;
   line-height: 1.35;
-  font-family: inherit;
 }

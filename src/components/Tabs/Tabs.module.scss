@@ -1,0 +1,32 @@
+@import "../../utils/styles/stylesUtils";
+
+.tabs {
+  display: flex;
+  align-content: stretch;
+}
+
+.optionWrap {
+  flex: auto;
+  border: 1px solid #000046;
+
+  &:not(:last-child) {
+    border-right: none;
+  }
+}
+
+.nativeOption {
+  @extend %visually-hidden;
+
+  &:checked ~ .text {
+    color: #ffffff;
+    background-color: #000046;
+  }
+}
+
+.text {
+  display: block;
+  text-align: center;
+  padding: 13px;
+  font-size: 14px;
+  color: #202020;
+}

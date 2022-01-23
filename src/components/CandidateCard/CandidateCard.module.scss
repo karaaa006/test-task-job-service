@@ -1,3 +1,5 @@
+@import "../../utils/styles/stylesUtils";
+
 p {
   margin: 0;
 }
@@ -89,14 +91,10 @@ p {
   font-size: 12px;
 }
 
-.btnsCard {
-  position: relative;
-}
-
 .btnCard {
-  background-color: transparent;
-  border: none;
-  padding: 0;
+  @extend %btn-reset;
+
+  position: relative;
 
   &:not(:last-child) {
     margin-right: 12px;
@@ -132,10 +130,8 @@ p {
 }
 
 .moreBtn {
-  padding: 0;
-  background-color: transparent;
-  border: none;
-  font-family: inherit;
+  @extend %btn-reset;
+
   font-size: 14px;
   text-align: left;
 }

@@ -1,0 +1,50 @@
+@import "../../utils/styles/stylesUtils";
+
+.queryInfo {
+  margin-bottom: 30px;
+}
+.filter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.queryResult {
+  margin-bottom: 10px;
+  font-size: 24px;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 140px;
+    height: 1px;
+    margin-top: 10px;
+    border-top: 1px solid #2a172d;
+  }
+}
+
+.candidatesCount {
+  color: #0096c7;
+}
+
+.positionText {
+  max-width: 263px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #5b5b5b;
+}
+
+.selectFilter {
+  background-color: transparent;
+  color: #0096c7;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.openFiltersBtn {
+  @extend %btn-reset;
+
+  padding: 11px;
+  background-color: #f4f6fc;
+  border-radius: 8px;
+}
