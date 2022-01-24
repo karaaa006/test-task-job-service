@@ -4,8 +4,22 @@ p {
   margin: 0;
 }
 .CandidateCard {
+  display: grid;
+  grid-template:
+    "img info info info"
+    "exp exp exp exp"
+    "status  status status btns";
+  grid-template-columns: max-content 1fr;
   border: 1px solid #eaeaea;
   padding: 16px;
+
+  @include for-tablets {
+    grid-template:
+      "img info btns"
+      "img exp btns"
+      "img status btns";
+    grid-template-columns: max-content 3fr 1fr;
+  }
 }
 
 .cardHeader {
@@ -13,12 +27,29 @@ p {
   margin-bottom: 20px;
 }
 
-.photo {
+.photoWrap {
+  grid-area: img;
   width: 70px;
   height: 70px;
   border: 1px solid #000000;
   border-radius: 50%;
   margin-right: 16px;
+
+  @include for-tablets {
+    width: 164px;
+    height: 164px;
+  }
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.info {
+  grid-area: info;
+  margin-bottom: 20px;
 }
 
 .position {
@@ -26,10 +57,31 @@ p {
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 6px;
+
+  @include for-tablets {
+    margin-bottom: 18px;
+
+    font-size: 24px;
+  }
+}
+
+.candidateDetail {
+  display: flex;
+  flex-direction: column;
+
+  @include for-tablets {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .name {
   margin-bottom: 6px;
+
+  @include for-tablets {
+    margin-right: 26px;
+    margin-bottom: 0;
+  }
 }
 
 .based {
@@ -51,14 +103,24 @@ p {
 .exp {
   @extend %list-reset;
 
+  grid-area: exp;
+
   margin-bottom: 20px;
 
+  font-size: 14px;
   color: #5b5b5b;
 }
 
 .expItem {
   &:not(:last-child) {
     margin-bottom: 12px;
+  }
+}
+
+.statusInfo {
+  grid-area: status;
+  @include for-tablets {
+    display: flex;
   }
 }
 
@@ -78,6 +140,20 @@ p {
     border-radius: 50%;
     margin-right: 4px;
   }
+
+  @include for-tablets {
+    margin-bottom: 0;
+  }
+}
+
+.lastUpdate {
+  color: #adadad;
+  font-size: 12px;
+
+  @include for-tablets {
+    order: -1;
+    margin-right: 20px;
+  }
 }
 
 .cardBottom {
@@ -87,18 +163,33 @@ p {
   align-items: center;
 }
 
-.lastUpdate {
-  color: #adadad;
-  font-size: 12px;
+.btnsCard {
+  grid-area: btns;
+  position: relative;
+  align-self: end;
+  justify-self: end;
+
+  @include for-tablets {
+    align-self: center;
+  }
 }
 
 .btnCard {
   @extend %btn-reset;
 
-  position: relative;
-
   &:not(:last-child) {
     margin-right: 12px;
+    margin-bottom: 12px;
+  }
+
+  @include for-tablets {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 46px;
+    height: 46px;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
   }
 }
 
@@ -107,7 +198,6 @@ p {
   position: absolute;
   right: 0;
   top: calc(100% + 7px);
-  padding: 20px;
   border: 0.5px solid #eaeaea;
   border-radius: 8px;
 
@@ -115,6 +205,11 @@ p {
 
   &.isHidden {
     display: none;
+  }
+
+  @include for-tablets {
+    top: 0;
+    left: calc(-100% - 6px);
   }
 }
 
@@ -124,13 +219,20 @@ p {
 
 .moreItem {
   &:not(:last-child) {
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
   }
 }
 
 .moreBtn {
   @extend %btn-reset;
 
+  width: 100%;
+  padding: 20px;
   font-size: 14px;
   text-align: left;
+
+  &:hover,
+  &:focus {
+    background-color: #f7f7f7;
+  }
 }

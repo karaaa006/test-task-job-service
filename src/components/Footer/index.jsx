@@ -82,18 +82,14 @@ export const Footer = () => {
           </div>
         </div>
         <div className={s.copyright}>
-          <ul className={s.copyrightList}>
-            <li className={s.copyrightItem}>
-              <a href="#" className={s.copyrightLink}>
-                Privacy Policy
-              </a>
-            </li>
-            <li className={s.copyrightItem}>
-              <a href="#" className={s.copyrightLink}>
-                Terms of Use
-              </a>
-            </li>
-          </ul>
+          <a href="#" className={`${s.copyrightLink} ${s.policy}`}>
+            Privacy Policy
+          </a>
+
+          <a href="#" className={`${s.copyrightLink} ${s.terms}`}>
+            Terms of Use
+          </a>
+
           <p className={s.copyrightText}>© 2021 All rights reserved</p>
         </div>
       </div>

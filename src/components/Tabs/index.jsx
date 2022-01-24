@@ -11,6 +11,7 @@ export const Tabs = ({ name, options }) => {
               name={name}
               value={option}
               className={s.nativeOption}
+              defaultChecked={idx === 0 && true}
             />
             <span className={s.text}>{option}</span>
           </label>

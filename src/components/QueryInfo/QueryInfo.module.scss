@@ -40,6 +40,7 @@
     display: inline-block;
     max-width: fit-content;
     font-size: 16px;
+    margin-right: 20px;
   }
 }
 
@@ -53,11 +54,17 @@
 }
 
 .selectFilter {
-  background-color: transparent;
+  @extend %btn-reset;
+
+  display: flex;
+  align-items: center;
   color: #0096c7;
-  border: none;
   font-weight: 500;
   font-size: 16px;
+}
+
+.selectText {
+  margin-right: 16px;
 }
 
 .openFiltersBtn {

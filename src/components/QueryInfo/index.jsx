@@ -1,4 +1,5 @@
 import filtersIcon from "../../images/icons/filtersIcon.svg";
+import arrowBlue from "../../images/icons/arrowBlue.svg";
 import s from "./QueryInfo.module.scss";
 
 export const QueryInfo = ({ candidatesCount, position }) => {
@@ -12,7 +13,8 @@ export const QueryInfo = ({ candidatesCount, position }) => {
       <p className={s.positionText}>Резюме {position} во Всей Украине</p>
       <div className={s.filter}>
         <button type="button" className={s.selectFilter}>
-          за все время
+          <span className={s.selectText}>за все время</span>{" "}
+          <img src={arrowBlue} alt="Иконка стрелки вниз" />
         </button>
 
         <button type="button" className={s.openFiltersBtn}>

@@ -11,22 +11,43 @@ export const Header = () => {
     <header className={s.header}>
       <div className="container">
         <div className={s.topBar}>
-          <div className={s.wrap}>
-            <button className={s.langs}>
-              <img src={langIcon} alt="Планета" />
-              <span className={s.langName}>RU</span>
+          <button className={s.langs}>
+            <img src={langIcon} alt="Планета" />
+            <span className={s.langName}>RU</span>
+            <img src={downArrow} alt="Планета" />
+          </button>
+          <nav className={`${s.navMobile} ${s.mobile}`}>
+            <a href="#" className={`${s.navLink} ${s.active}`}>
+              Соискателю
               <img src={downArrow} alt="Планета" />
-            </button>
-            <nav className={s.nav}>
-              <a href="#" className={`${s.navLink} ${s.active}`}>
-                Соискателю
-                <img src={downArrow} alt="Планета" />
-              </a>
-            </nav>
-          </div>
+            </a>
+          </nav>
+          <nav className={s.navLarge}>
+            <ul className={s.navList}>
+              <li className={s.navItem}>
+                <a href="#" className={s.navLink}>
+                  Соискателю
+                </a>
+              </li>
+              <li className={s.navItem}>
+                <a href="#" className={`${s.navLink} ${s.active}`}>
+                  Работодателю
+                </a>
+              </li>
+              <li className={s.navItem}>
+                <a href="#" className={s.navLink}>
+                  HR
+                </a>
+              </li>
+            </ul>
+          </nav>
           <div className={s.userName}>
-            <img src={user} alt={"Иконка пользователя"} />
-            <span>Юра Марченко</span>
+            <img
+              src={user}
+              alt={"Иконка пользователя"}
+              className={s.userIcon}
+            />
+            <span className={s.userText}>Юра Марченко</span>
           </div>
         </div>
         <div className={s.searchBar}>

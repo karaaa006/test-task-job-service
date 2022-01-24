@@ -19,11 +19,13 @@ export const CandidateCard = ({
 
   return (
     <article className={s.CandidateCard}>
-      <div className={s.cardHeader}>
+      <div className={s.photoWrap}>
         {photo && <img src={photo} alt={name} className={s.photo} />}
+      </div>
 
-        <div>
-          <p className={s.position}>{position}</p>
+      <div className={s.info}>
+        <p className={s.position}>{position}</p>
+        <div className={s.candidateDetail}>
           <p className={s.name}>{`${
             name === "" ? "Инкогнито" : name
           }, ${years}`}</p>
@@ -39,26 +41,26 @@ export const CandidateCard = ({
           );
         })}
       </ul>
-      <p className={s.status}>Онлайн</p>
-      <div className={s.cardBottom}>
+      <div className={s.statusInfo}>
+        <p className={s.status}>Онлайн</p>
         <p className={s.lastUpdate}>Обновлено 9 минут назад</p>
-        <div className={s.btnsCard}>
-          <button className={s.btnCard}>
-            <img src={likeIcon} alt="Heart icon" />
-          </button>
-          <button className={s.btnCard} onClick={handleClickMore}>
-            <img src={moreIcon} alt="More icon" />
-          </button>
-          <div className={`${s.morePopup} ${isHiddenPopup && s.isHidden}`}>
-            <ul className={s.moreList}>
-              <li className={s.moreItem}>
-                <button className={s.moreBtn}>Пожаловаться</button>
-              </li>
-              <li className={s.moreItem}>
-                <button className={s.moreBtn}>Скрыть кандидата</button>
-              </li>
-            </ul>
-          </div>
+      </div>
+      <div className={s.btnsCard}>
+        <button className={s.btnCard}>
+          <img src={likeIcon} alt="Heart icon" />
+        </button>
+        <button className={s.btnCard} onClick={handleClickMore}>
+          <img src={moreIcon} alt="More icon" />
+        </button>
+        <div className={`${s.morePopup} ${isHiddenPopup && s.isHidden}`}>
+          <ul className={s.moreList}>
+            <li className={s.moreItem}>
+              <button className={s.moreBtn}>Пожаловаться</button>
+            </li>
+            <li className={s.moreItem}>
+              <button className={s.moreBtn}>Скрыть кандидата</button>
+            </li>
+          </ul>
         </div>
       </div>
     </article>
