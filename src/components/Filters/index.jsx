@@ -23,6 +23,7 @@ export const Filters = () => {
   const handleClickClose = () => {
     setIsHiddenFilter(true);
   };
+
   return (
     <div className={`${s.filters} ${isHiddenFilter && s.isHidden}`}>
       <button className={s.close} type="button" onClick={handleClickClose}>
@@ -30,7 +31,13 @@ export const Filters = () => {
       </button>
       <h2 className={s.title}>Фильтры</h2>
       <FilterBlock>
-        <CheckboxRound labelText="Только с фотографией" icon={photoIcon} />
+        <CheckboxRound
+          labelText="Только с фотографией"
+          icon={photoIcon}
+          name="photo"
+          toState
+          // onChange={dispatch(toggleCheckbox("photo"))}
+        />
       </FilterBlock>
       <FilterBlock title="Возраст">
         <Multirange min={0} max={100} rangeText="лет" />

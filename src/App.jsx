@@ -6,19 +6,18 @@ import { Footer } from "./components/Footer";
 import { CandidatesList } from "./components/CandidatesList";
 import { QueryInfo } from "./components/QueryInfo";
 import { Filters } from "./components/Filters";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAllCandidates } from "./store/operations/candidatesOperations";
 
 function App() {
-  const [candidates, setCandidates] = useState([]);
+  const dispatch = useDispatch();
+
+  // const [candidates, setCandidates] = useState([]);
+  const candidates = useSelector((state) => state.candidates.items);
 
   useEffect(() => {
-    async function fetchData() {
-      const data = await getCandidates();
-      const fetchedCandidates = data.results;
-
-      setCandidates(fetchedCandidates);
-    }
-    fetchData();
-  }, []);
+    dispatch(fetchAllCandidates());
+  }, [dispatch]);
 
   return (
     <div className="App">

@@ -217,12 +217,6 @@ p {
   @extend %list-reset;
 }
 
-.moreItem {
-  &:not(:last-child) {
-    // margin-bottom: 20px;
-  }
-}
-
 .moreBtn {
   @extend %btn-reset;
 
