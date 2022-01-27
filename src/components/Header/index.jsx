@@ -5,8 +5,15 @@ import markerIcon from "../../images/icons/marker.svg";
 import langIcon from "../../images/icons/language.svg";
 import downArrow from "../../images/icons/down-arrow.svg";
 import user from "../../images/icons/user.svg";
+import { useDispatch } from "react-redux";
+import { fetchCandidates } from "../../store/operations/candidatesOperations";
 
 export const Header = () => {
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(fetchCandidates());
+  };
   return (
     <header className={s.header}>
       <div className="container">
@@ -70,7 +77,9 @@ export const Header = () => {
 
             <input type="text" placeholder="Город" className={s.input} />
           </div>
-          <button className={s.btn}>Найти кандидата</button>
+          <button className={s.btn} type="button" onClick={handleClick}>
+            Найти кандидата
+          </button>
         </div>
       </div>
     </header>

@@ -1,18 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { photo: false };
+const initialState = {};
 
 const { reducer, actions } = createSlice({
   name: "filtersReducer",
   initialState,
   reducers: {
+    addFilter(state, action) {
+      return { ...state, [action.payload.name]: action.payload.value };
+    },
     toggleCheckbox(state, action) {
-      console.log(!state[action.payload]);
-      return { ...state, [action.payload]: !state[action.payload] };
+      return { ...state, [action.payload.name]: action.payload.value };
     },
   },
 });
 
-export const { toggleCheckbox } = actions;
+export const { toggleCheckbox, addFilter } = actions;
 
 export default reducer;

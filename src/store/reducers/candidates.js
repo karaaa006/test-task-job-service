@@ -1,17 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchAllCandidates } from "../operations/candidatesOperations";
+import { fetchCandidates } from "../operations/candidatesOperations";
 
-const initialState = { items: [] };
+const initialState = { items: [], totalCount: 0, currentPage: 1, pageCount: 1 };
 
 const { reducer } = createSlice({
   name: "candidatesReducer",
   initialState,
   extraReducers: {
-    [fetchAllCandidates.fulfilled]: (state, action) => {
-      console.log(action.payload);
+    [fetchCandidates.fulfilled]: (state, action) => {
       return {
         ...state,
-        items: [...state.items, ...action.payload.results],
+        items: [...action.payload.results],
+        totalCount: action.payload.total_count,
+        currentPage: action.payload.current_page,
+        pageCount: action.payload.page_count,
       };
     },
   },

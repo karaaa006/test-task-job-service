@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import photoIcon from "../../images/icons/photoIcon.svg";
 import studentIcon from "../../images/icons/studentIcon.svg";
 import closeIcon from "../../images/icons/close.svg";
@@ -17,16 +15,10 @@ import { FilterBlock } from "../FilterBlock";
 import { Multirange } from "../Multirange";
 import { Tabs } from "../Tabs";
 
-export const Filters = () => {
-  const [isHiddenFilter, setIsHiddenFilter] = useState(false);
-
-  const handleClickClose = () => {
-    setIsHiddenFilter(true);
-  };
-
+export const Filters = ({ isMobileOpen, toggleFilters }) => {
   return (
-    <div className={`${s.filters} ${isHiddenFilter && s.isHidden}`}>
-      <button className={s.close} type="button" onClick={handleClickClose}>
+    <div className={`${s.filters} ${!isMobileOpen && s.isHidden}`}>
+      <button className={s.close} type="button" onClick={toggleFilters}>
         <img src={closeIcon} alt="Иконка закрытия фильтров" />
       </button>
       <h2 className={s.title}>Фильтры</h2>
@@ -36,7 +28,6 @@ export const Filters = () => {
           icon={photoIcon}
           name="photo"
           toState
-          // onChange={dispatch(toggleCheckbox("photo"))}
         />
       </FilterBlock>
       <FilterBlock title="Возраст">
@@ -46,7 +37,7 @@ export const Filters = () => {
         <Tabs name="gender" options={["Любой", "Женщины", "Мужчины"]} />
       </FilterBlock>
       <FilterBlock title="Желаемая зарплата">
-        <Multirange min={0} max={100000} rangeText={["грн", "дол", "евр"]} />
+        <Multirange min={0} max={50000} rangeText={["грн", "дол", "евр"]} />
         <CheckboxRound labelText="Не показывать без зарплаты" />
       </FilterBlock>
       <FilterBlock title="Опыт работы">

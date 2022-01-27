@@ -1,23 +1,15 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { getCandidates } from "../../api/fetchData";
 
-export const fetchAllCandidates = createAsyncThunk(
-  "candidates/fetchAllCandidates",
-  async (_, { rejectWithValue }) => {
+export const fetchCandidates = createAsyncThunk(
+  "candidates/fetchCandidates",
+  async (page = 1, { rejectWithValue, getState }) => {
     try {
-      const data = await getCandidates();
+      const { filters } = getState();
+
+      const data = await getCandidates(page, filters);
+
       return data;
-    } catch (err) {
-      return rejectWithValue(err);
-    }
-  }
-);
-export const fetchFilteredCandidates = createAsyncThunk(
-  "candidates/fetchFilteredCandidates",
-  async (id, { rejectWithValue }) => {
-    try {
-      //   const data = await delContact(id);
-      //   return data;
     } catch (err) {
       return rejectWithValue(err);
     }

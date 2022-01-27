@@ -1,9 +1,22 @@
 @import "../../utils/styles/stylesUtils";
 
+.candidatesListWrap {
+  margin-bottom: 80px;
+
+  @include for-tablets {
+    margin-bottom: 120px;
+  }
+}
+
 .candidatesList {
   @extend %list-reset;
 
   width: 100%;
+  margin-bottom: 40px;
+
+  @include for-tablets {
+    margin-bottom: 50px;
+  }
 }
 .listItem {
   &:not(:last-child) {

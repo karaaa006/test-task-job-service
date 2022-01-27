@@ -1,14 +1,26 @@
-import { useDispatch, useSelector } from "react-redux";
-import { toggleCheckbox } from "../../store/reducers/filters";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { addFilter, toggleCheckbox } from "../../store/reducers/filters";
 import s from "./Checkbox.module.scss";
 
 export const CheckboxRound = ({ labelText, icon, name, toState }) => {
   const dispatch = useDispatch();
-  const chackboxValue = useSelector((state) => state.filters[name]);
+  const [value, setValue] = useState(false);
+
+  useEffect(() => {
+    if (toState) {
+      dispatch(addFilter({ name, value }));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (toState) dispatch(toggleCheckbox({ name, value }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value]);
 
   const handleChange = () => {
-    console.log(toState, toggleCheckbox(name));
-    toState && dispatch(toggleCheckbox(name));
+    setValue(!value);
   };
 
   return (
@@ -22,7 +34,7 @@ export const CheckboxRound = ({ labelText, icon, name, toState }) => {
         name={name}
         className={s.nativeCheckbox}
         onChange={handleChange}
-        value={chackboxValue}
+        value={value}
       />
       <div className={s.customCheckbox}>
         <div className={s.indicator}></div>

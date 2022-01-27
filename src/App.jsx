@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { getCandidates } from "./api/fetchData";
 import "./App.css";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
@@ -7,26 +6,38 @@ import { CandidatesList } from "./components/CandidatesList";
 import { QueryInfo } from "./components/QueryInfo";
 import { Filters } from "./components/Filters";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAllCandidates } from "./store/operations/candidatesOperations";
+import { fetchCandidates } from "./store/operations/candidatesOperations";
 
 function App() {
   const dispatch = useDispatch();
+  const [isOpenMobFilters, setIsOpenMobFilters] = useState(false);
 
-  // const [candidates, setCandidates] = useState([]);
+  const candidatesCount = useSelector((state) => state.candidates.totalCount);
   const candidates = useSelector((state) => state.candidates.items);
 
+  const handleToggleFilters = () => {
+    setIsOpenMobFilters(!isOpenMobFilters);
+  };
+
   useEffect(() => {
-    dispatch(fetchAllCandidates());
+    dispatch(fetchCandidates());
   }, [dispatch]);
 
   return (
     <div className="App">
       <Header />
       <div className="container">
-        <QueryInfo candidatesCount="451 642" position="продавец консультант" />
+        <QueryInfo
+          candidatesCount={candidatesCount}
+          position="продавец консультант"
+          toggleFilters={handleToggleFilters}
+        />
         <div className="main-content">
           <CandidatesList candidates={candidates} />
-          <Filters />
+          <Filters
+            isMobileOpen={isOpenMobFilters}
+            toggleFilters={handleToggleFilters}
+          />
         </div>
       </div>
       <Footer />
@@ -34,5 +45,3 @@ function App() {
   );
 }
 export default App;
-// 1. Иконки переделать на псевоэлементы
-// 2.

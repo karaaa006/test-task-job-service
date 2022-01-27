@@ -4,11 +4,10 @@ import s from "./Multirange.module.scss";
 import arrow from "../../images/icons/down-arrow-blk.svg";
 
 export const Multirange = ({ min, max, rangeText }) => {
-  const [value, setValue] = useState([min, max]);
   const [minValue, setMinValue] = useState(min);
   const [maxValue, setMaxValue] = useState(max);
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (e, newValue) => {
     const [min, max] = newValue;
     setMinValue(min);
     setMaxValue(max);
