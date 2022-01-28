@@ -18,7 +18,7 @@ export const CustomPagination = ({ currentPage, maxPage }) => {
         page={currentPage}
         onChange={handleChangePage}
         sx={{
-          "& .Mui-selected": {
+          "& .MuiPaginationItem-root.Mui-selected": {
             backgroundColor: "#000046",
             color: "#ffffff",
             fontFamily: "inherit",

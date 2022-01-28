@@ -26,21 +26,23 @@ export const CandidateCard = ({
       <div className={s.info}>
         <p className={s.position}>{position}</p>
         <div className={s.candidateDetail}>
-          <p className={s.name}>{`${
-            name === "" ? "Инкогнито" : name
-          }, ${years}`}</p>
+          <p className={s.name}>{`${name === "" ? "Инкогнито" : name} ${
+            typeof years === "string" ? `, ${years}` : ""
+          }`}</p>
           <p className={s.based}>{city}</p>
         </div>
       </div>
-      <ul className={s.exp}>
-        {experience.map(({ position, workDistance }, idx) => {
-          return (
-            <li className={s.expItem} key={idx}>
-              {`${position} - ${workDistance}`}
-            </li>
-          );
-        })}
-      </ul>
+      {experience && (
+        <ul className={s.exp}>
+          {experience.map(({ position, workDistance }, idx) => {
+            return (
+              <li className={s.expItem} key={idx}>
+                {`${position} - ${workDistance}`}
+              </li>
+            );
+          })}
+        </ul>
+      )}
       <div className={s.statusInfo}>
         <p className={s.status}>Онлайн</p>
         <p className={s.lastUpdate}>Обновлено 9 минут назад</p>

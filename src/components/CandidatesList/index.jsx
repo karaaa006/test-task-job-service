@@ -20,15 +20,13 @@ export const CandidatesList = ({ candidates }) => {
               }
             );
 
-            const years = getDistanceDateToNow(birthday);
-
             return (
               <li className={s.listItem} key={id}>
                 <CandidateCard
                   name={first_name}
                   photo={photo}
                   position="Продавец - консультант"
-                  years={years}
+                  years={birthday && getDistanceDateToNow(birthday)}
                   experience={normalizedExp}
                   city="Kyiv, Ukraine"
                 />
